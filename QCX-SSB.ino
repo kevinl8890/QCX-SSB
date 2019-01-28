@@ -378,7 +378,7 @@ inline void vox(int8_t amp)
 }
 
 volatile uint8_t drive = 4;
-void set_pwm_pa(uint8_t amp)
+inline void set_pwm_pa(uint8_t amp)
 {
   // Based on amplitude set the PA voltage through PWM. The following voltages at L4 have been measured for various PWM values: 0x00 (0.48V), 0x10 (0.50V), 0x1A (0.54V), 0x1D (0.66V), 0x20 (3.4-7V), 0x30 (6.5-11V), 0x40 (9.96V), 0x60 (11V), 0x80 (11.5V), 0xFF (11.8V)
   #define KEY_OUT_PWM_MIN  0x1D   // The PWM (threshold) value where the voltage over L4 just start rising ~0.6V
